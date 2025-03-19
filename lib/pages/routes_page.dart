@@ -88,10 +88,10 @@ class _RoutesPageState extends State<RoutesPage> {
       title: "San Remo",
       image: "images/1.jpg",
       description:
-          "A famous casino known for its elegant Art Nouveau architecture and rich history.",
+          "Famous known for its elegant Art Nouveau architecture and rich history.",
       local: "Corso degli Inglesi, 18, 18038 Sanremo IM, Italy",
       history:
-          "Opened in 1905, the casino has been a hotspot for high society and a symbol of San Remo's nightlife.",
+          "Opened in 1905,has been a hotspot for high society and a symbol of San Remo's nightlife.",
       fact:
           "The San Remo Music Festival, Italy’s most famous song contest, originated here in 1951.",
       coordinates: LatLng(43.8108, 7.7732), // San Remo city center
