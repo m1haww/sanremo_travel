@@ -491,7 +491,7 @@
 				DEVELOPMENT_TEAM = Z24M4HH7WL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SANREMO Travel";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sanremo Travel";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -682,7 +682,7 @@
 				DEVELOPMENT_TEAM = Z24M4HH7WL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SANREMO Travel";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sanremo Travel";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -713,7 +713,7 @@
 				DEVELOPMENT_TEAM = Z24M4HH7WL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "SANREMO Travel";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sanremo Travel";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -44,7 +44,7 @@ class _LocationInfoState extends State<LocationInfo> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Image(
-                    image: AssetImage(widget.item.image), // Corrected usage
+                    image: AssetImage(widget.item.image),
                     height: height * 0.25,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -81,26 +81,7 @@ class _LocationInfoState extends State<LocationInfo> {
                   context,
                   widget.item.fact,
                 ), // Corrected usage
-                buildHeight(context, 0.015),
-                Divider(color: kYellow, thickness: 1),
-                buildTextReview(context, "Reviews"),
-                buildHeight(context, 0.01),
-                buildReviewContainer(context),
-                Divider(color: kYellow, thickness: 1),
-                buildTextReview(context, "Add your rating and review!"),
-                buildHeight(context, 0.01),
-                buildStarRating(),
-                buildHeight(context, 0.01),
-                buildFIELDREVIEW(
-                  context,
-                  "Add your review ...",
-                  controller: _viewController,
-                ),
-                buildHeight(context, 0.005),
-                GestureDetector(
-                  onTap: submitReview,
-                  child: buildcontainerSumbit(context, "Submit review"),
-                ),
+
                 buildHeight(context, 0.05),
               ],
             ),
@@ -145,7 +126,7 @@ class _LocationInfoState extends State<LocationInfo> {
           ),
           child: Center(
             child: Text(
-              "No reviews submitted yet.",
+              "No rating submitted yet.",
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.white.withOpacity(0.5),
@@ -158,9 +139,23 @@ class _LocationInfoState extends State<LocationInfo> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children:
               widget.item.review
-                  .map((review) => buildReviewTile(review))
+                  .map((review) => buildReviewStars(review))
                   .toList(),
         );
+  }
+
+  Widget buildReviewStars(Review review) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        children: [
+          ...List.generate(
+            review.starcount,
+            (index) => Icon(Icons.star, color: Color(0xffFFE838), size: 20),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget buildReviewTile(Review review) {
@@ -222,19 +217,20 @@ class _LocationInfoState extends State<LocationInfo> {
   }
 
   void submitReview() {
-    if (_viewController.text.trim().isEmpty || _selectedStars == 0) {
-      // Show a message to let the user know they need to fill the fields
+    // Check if stars are selected
+    if (_selectedStars == 0) {
+      // Show an error message if no stars are selected
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            'Please fill in both the review text and rating.',
+            'Please select a star rating.',
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Colors.red,
         ),
       );
     } else {
-      // Proceed with submitting the review if fields are filled
+      // Proceed with submitting the review even if the text is empty
       final String formattedDate = DateFormat(
         'yyyy-MM-dd HH:mm:ss',
       ).format(DateTime.now());
